@@ -1,0 +1,113 @@
+﻿@font-face {
+    font-family: "gamepadFont";
+    src: url("../assets/EsquireGenericGamepdFont_CS.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.portrait-warning
+{
+    display: none;
+
+    padding: 12px;
+    background-color: yellow;
+    font-weight: bold;
+}
+
+#canvasHolder {
+    background-color: cornflowerblue;
+    display: flex;
+    /* align-items: flex-start; */
+    align-items: center;
+    justify-content: center;
+}
+
+#theCanvas {
+    background-color: black;
+    image-rendering: pixelated;
+    /* object-fit: contain; */
+
+    /* Disable text highlighting and magnifying glass on iPhone/webkit */
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+.controls {
+    display: flex;
+    font-family: monospace;
+    font-size: 75%;
+    overflow-x: auto;
+}
+
+.flex-pad {
+    flex: 2;
+}
+
+th,
+td {
+    padding: 0 12px;
+    vertical-align: middle;
+    text-align: center;
+    width: 9%;
+}
+tbody tr {
+    height: 40px;
+}
+
+td:nth-child(even) {
+    background: #ededed;
+}
+th:nth-child(even) {
+    background: #ededed30;
+}
+
+thead tr {
+    background-color: #6666667f;
+}
+
+thead th {
+    vertical-align: bottom;
+    padding-bottom: 6px;
+}
+
+table {
+    border: 1px solid black;
+    margin: 6px;
+    overflow-x: scroll;
+    width: 1%;
+    max-width: 100%;
+}
+
+.controls tbody th {
+    text-align: right;
+}
+
+.button-glyph {
+    font-family: "gamepadFont";
+    font-size: 333%;
+    line-height: 60%;
+    padding: 0.25ex 0;
+    vertical-align: middle;
+}
+
+.font-attribution {
+    text-align: center;
+    font-size: 8pt;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    #theCanvas {
+        display: none;
+    }
+
+    .portrait-warning
+    {
+        display: block;
+    }
+}

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Demo</title>
+    <base href="./" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <div id="loading" style="display: table-cell; margin: auto; width:100vw; height:100vh; vertical-align: middle; background: #ffcc10;">
+            <div style="display: block; margin: auto; width: 9em; color: white;font-family: 'Segoe UI', sans-serif;">
+                <div style="text-align: center; font-size: 0.85em;">Made with<br /><a href="https://github.com/kniEngine/kni"><img src="kni.png" border="0" alt="Kni"></a></div>
+                <div style="text-align: center; font-size: 1.8em;">loading&nbsp;<marquee style="width:0.9em; vertical-align: bottom;">.&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;</marquee></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portrait-warning">
+        <h1>🔄</h1>
+        <p>This game must be played in Landscape Mode on your device.</p>
+        <p>Please rotate 90 degrees 🙂</p>
+    </div>
+
+    <div id="instructions">
+        <div class="controls">
+            <div class="flex-pad"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Move</th>
+                        <th>Shoot</th>
+                        <th>Jump</th>
+                        <th>Sub-Weapon</th>
+                        <th>Exit/Enter Tank</th>
+                        <th>Pause Menu</th>
+                        <th>Toggle Debug Mode</th>
+                        <th>Toggle Step Mode</th>
+                        <th>Step</th>
+                        <th>Move Camera (Debug Mode)</th>
+                        <th>Reload Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Gamepad</th>
+                        <td class="button-glyph">Y</td>
+                        <td class="button-glyph">Q</td>
+                        <td class="button-glyph">,</td>
+                        <td class="button-glyph">UQ</td>
+                        <td class="button-glyph">B</td>
+                        <td class="button-glyph">V</td>
+                        <td class="button-glyph">j</td>
+                        <td class="button-glyph">d</td>
+                        <td class="button-glyph">'</td>
+                        <td class="button-glyph">y</td>
+                        <td class="button-glyph">e\</td>
+                    </tr>
+                    <tr>
+                        <th>Keyboard</th>
+                        <td>Arrow Keys</td>
+                        <td>Z</td>
+                        <td>X</td>
+                        <td>Down+Z</td>
+                        <td>A</td>
+                        <td>S</td>
+                        <td>NumPad 7</td>
+                        <td>NumPad 1</td>
+                        <td>NumPad 3</td>
+                        <td>n/a</td>
+                        <td>n/a</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="flex-pad"></div>
+        </div>
+
+        <div class="font-attribution">
+            Gamepad font by <a href="https://esquiredevmark.itch.io/generic-gamepad-font" target="_">EsquireDevMark</a>.
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">?</a>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script type="module">
+        import { BrotliDecode } from './js/decode.min.js';
+        window.BrotliDecode = BrotliDecode;
+
+        // Set this to enable Brotli (.br) decompression on static webServers
+        // that don't support content compression and http://.
+        var enableBrotliDecompression = false;
+        Blazor.start({
+            loadBootResource: function (type, name, defaultUri, integrity) {
+                if (enableBrotliDecompression === true && type !== 'dotnetjs' && location.hostname !== 'localhost') {
+                    return (async function () {
+                        const response = await fetch(defaultUri + '.br', { cache: 'no-cache' });
+                        if (!response.ok)
+                            throw new Error(response.statusText);
+                        const originalResponseBuffer = await response.arrayBuffer();
+                        const originalResponseArray = new Int8Array(originalResponseBuffer);
+                        const contentType = (type === 'dotnetwasm')
+                            ? 'application/wasm'
+                            : 'application/octet-stream';
+                        const decompressedResponseArray = BrotliDecode(originalResponseArray);
+                        return new Response(decompressedResponseArray,
+                            {
+                                headers: { 'content-type': contentType }
+                            });
+                    })();
+                }
+            }
+        });
+
+        window.addEventListener("keydown", function (e) {
+            if (e.code == "ArrowUp" || e.code == "ArrowDown") {
+                e.preventDefault();
+            }
+        }, false);
+    </script>
+
+    <script src="_content/nkast.Wasm.Dom/js/JSObject.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Window.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Document.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Navigator.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Gamepad.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Media.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.XHR/js/XHR.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Canvas/js/Canvas.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Canvas/js/CanvasGLContext.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Audio/js/Audio.8.0.5.js"></script>
+    <script src="_content/nkast.Wasm.XR/js/XR.8.0.5.js"></script>
+
+    <script>
+        function tickJS() {
+            try {
+                window.theInstance.invokeMethod('TickDotNet');
+            } catch (error) {
+                console.log('TickDotNet threw error:', error);
+            }
+
+            window.requestAnimationFrame(tickJS);
+        }
+
+        function sizeCanvas() {
+            var canvas = document.getElementById('theCanvas');
+            var holder = document.getElementById('canvasHolder');
+
+            const gameHeight = 256 + (8 * 2);
+            const gameWidth = Math.ceil((gameHeight / 9) * 16);
+
+            const body = window.document.body;
+            const bodyWidth = body.clientWidth;
+            const bodyHeight = body.clientHeight;
+
+            const scale =
+                Math.max(
+                    1,
+                    Math.min(
+                        Math.floor(bodyWidth / gameWidth),
+                        Math.floor(bodyHeight / gameHeight)));
+
+            const width = gameWidth * scale;
+            const height = gameHeight * scale;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            console.log(`using scale ${scale} and dimensions ${width}x${height}`);
+        }
+
+        window.initRenderJS = (instance) => {
+            window.theInstance = instance;
+
+            // set initial canvas size
+            sizeCanvas();
+            
+            // disable context menu on right click
+            const canvas = document.getElementById('theCanvas');
+            canvas.addEventListener("contextmenu", e => e.preventDefault());
+
+            // begin game loop
+            window.requestAnimationFrame(tickJS);
+        };
+
+        window.onkeydown = function (event) {
+            // Prevent Arrows Keys and Spacebar scrolling the outer page
+            // when running inside an iframe. e.g: itch.io embedding.
+            if ([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1)
+                event.preventDefault();
+        };
+        window.onmousewheel = function (event) {
+            // Prevent Mousewheel scrolling the outer page
+            // when running inside an iframe. e.g: itch.io embedding.
+            event.preventDefault();
+        };
+
+        window.addEventListener("resize", function (e) {
+            sizeCanvas();
+        }, false);
+    </script>
+</body>
+
+</html>
