@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PC.TankStoryAlpha.Web",
   "resources": {
-    "hash": "sha256-WYg/7pHE1CFHTZpoKDelgFG1Fj4wHrGlfQNelzVm5UA=",
+    "hash": "sha256-IzmBfTy0RO1w7a+butPh+gshN3/ro2kY8T03G7puxR0=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-ftpNqtARtVNE8ku5eB/jXoklb41UQ+EutUHfwmbNTBY="
     },
@@ -46,8 +46,8 @@
       "nkast.Wasm.Dom.wasm": "sha256-QnRHTwUbVLQiYV+2GcMd1vUFWUammFaQB0sIBQ5tDco=",
       "nkast.Wasm.XHR.wasm": "sha256-ZSpcGNollLKAEU5qOc7HJ5K/tIyWx8LVOwq2wbLLhnY=",
       "nkast.Wasm.XR.wasm": "sha256-fQ8a+lyHnntLVoziLs2PGFOMCcxV5V1HeVrBNBeGRpE=",
-      "PC.TankStoryAlpha.wasm": "sha256-PnaIA0I91q0xp5s6iHM+aRSFzrsJR1PkvfVaOPumNRw=",
-      "PC.TankStoryAlpha.Web.wasm": "sha256-WiELTdy9wm2KDm+z+TXR3joRNugrWuc9RRP4jtcF/1o=",
+      "PC.TankStoryAlpha.wasm": "sha256-6LhLo4E0/Ye2FB4Zfy3II+R9zICBt8RDg3JaLscIGA4=",
+      "PC.TankStoryAlpha.Web.wasm": "sha256-SdZCBgNP8FfhVGZwqaFDYZWgOS0zcS9L5JcvkA1/92U=",
       "System.Collections.Concurrent.wasm": "sha256-mF6/gBgklYCLBJYkHtZgsxZm+7fzGbIKJXLmI0+nMXU=",
       "System.Collections.NonGeneric.wasm": "sha256-scA255C0LmLC0ULBtmDv2ywfPu/qjcOYBOsepze0S+o=",
       "System.Collections.Specialized.wasm": "sha256-oHxQEeu8aOjMQ+Ea6+z+B3eicmVcAGIsMPFiUBqRPBg=",
@@ -79,7 +79,7 @@
       "System.Runtime.Numerics.wasm": "sha256-m2uTuxWvLwD4h1594SMtd5FCLTrt3BSwjdkFWpgqW7s=",
       "System.Runtime.Serialization.Formatters.wasm": "sha256-Ty7ZyC12xriqHpS4UmTalmlRfFI+OR6swfdEh7HM8X4=",
       "System.Runtime.Serialization.Primitives.wasm": "sha256-TcIt8oC7wqhIQcsE3nifP7GRkh8IFrJaCSciMlXNI1w=",
-      "System.Runtime.wasm": "sha256-6lYBIf3McXlgNJlPPLL3KW+7hwEyS5yGZSmqkfxwWAw=",
+      "System.Runtime.wasm": "sha256-hP7L3jEn1gbPomdMe2ejlIY7JZjGhYxKV0B2FmlZDH8=",
       "System.Security.Cryptography.wasm": "sha256-s06cdinuw4+Haxg7Uu6jZMHOw/GZ5XvyIRvlUwOR3nU=",
       "System.Text.Encodings.Web.wasm": "sha256-SnBaLdHisc6sfzL0B/ww5raV+4w7vc7hx4D15k4giDs=",
       "System.Text.Json.wasm": "sha256-oqqbR3BFG1eTN1jYvjoSPLE2eclfQcmKAbR2Q5to2v0=",
@@ -93,7 +93,7 @@
       "Xna.Framework.Content.wasm": "sha256-4AMiJtsI7saWXvDdg85708xCESYZCU1+gfimQ6VDom8=",
       "Xna.Framework.Devices.wasm": "sha256-Y4+iNkPMco3+jtUGO0cP2ZR2ZQUoySCt3RCHNRtKRBs=",
       "Xna.Framework.Game.wasm": "sha256-iTCplsVpQUWxI5MqmpIfEU1IoOj1uIIkMp845oHH50E=",
-      "Xna.Framework.Graphics.wasm": "sha256-QHzvqRxbyVXzJ5RTbGkzG2l1UCaHDX3J2wdF8wA4zro=",
+      "Xna.Framework.Graphics.wasm": "sha256-TfOz5DqgHKe5fcgRztQa87OsDgl6jGbtYppMpf1y4XA=",
       "Xna.Framework.Input.wasm": "sha256-3RJ2qVfIlPSla56m4CX1oofYqCJmQuEmyrJTSFjvaNc=",
       "Xna.Framework.Media.wasm": "sha256-9A4r5c+XnMcErDxp3+MtW586HXU0NcRNAmgQ6YpVbRc=",
       "Xna.Framework.Storage.wasm": "sha256-nLVHpPRyCluYnbqGHDtDMHuTWjC/71QC+jwUHLhblgs=",
