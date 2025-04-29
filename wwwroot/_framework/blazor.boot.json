@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PC.TankStoryAlpha.Web",
   "resources": {
-    "hash": "sha256-e1UEc8r21H05mIuQky8TDH72zsH1oy7+6CGSRLr9B+k=",
+    "hash": "sha256-/EPM1xfYkLjlCrTubGgNUM/h2B2jzRp9H8QD1m1zT78=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-ftpNqtARtVNE8ku5eB/jXoklb41UQ+EutUHfwmbNTBY="
     },
@@ -46,8 +46,8 @@
       "nkast.Wasm.Dom.wasm": "sha256-QnRHTwUbVLQiYV+2GcMd1vUFWUammFaQB0sIBQ5tDco=",
       "nkast.Wasm.XHR.wasm": "sha256-ZSpcGNollLKAEU5qOc7HJ5K/tIyWx8LVOwq2wbLLhnY=",
       "nkast.Wasm.XR.wasm": "sha256-fQ8a+lyHnntLVoziLs2PGFOMCcxV5V1HeVrBNBeGRpE=",
-      "PC.TankStoryAlpha.wasm": "sha256-kiGSY9YiMkDlz8xbeXFqt3Kg91e/ecIO5WPwSBaxfvE=",
-      "PC.TankStoryAlpha.Web.wasm": "sha256-6IA4vRpZwpNA4S7tJH4tTfqErIQhEFYEeVBEtM0yzDY=",
+      "PC.TankStoryAlpha.wasm": "sha256-UIX2ei0S0Dw+ovwRjZhRIeCctDo8o1UklV4nb4+Pyjc=",
+      "PC.TankStoryAlpha.Web.wasm": "sha256-wZuC48LyAaM3yeyMcOwW/jLviEHlyQxc5jkjPCeZEkU=",
       "System.Collections.Concurrent.wasm": "sha256-mF6/gBgklYCLBJYkHtZgsxZm+7fzGbIKJXLmI0+nMXU=",
       "System.Collections.NonGeneric.wasm": "sha256-scA255C0LmLC0ULBtmDv2ywfPu/qjcOYBOsepze0S+o=",
       "System.Collections.Specialized.wasm": "sha256-oHxQEeu8aOjMQ+Ea6+z+B3eicmVcAGIsMPFiUBqRPBg=",
