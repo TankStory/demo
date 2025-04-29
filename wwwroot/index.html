@@ -154,7 +154,10 @@
 
         function sizeCanvas() {
             var canvas = document.getElementById('theCanvas');
-            var holder = document.getElementById('canvasHolder');
+
+            if (!canvas) {
+                return;
+            }
 
             const gameHeight = 256 + (8 * 2);
             const gameWidth = Math.ceil((gameHeight / 9) * 16);
@@ -181,6 +184,7 @@
 
         window.initRenderJS = (instance) => {
             window.theInstance = instance;
+            localStorage.setItem("origin", location.origin)
 
             // set initial canvas size
             sizeCanvas();
