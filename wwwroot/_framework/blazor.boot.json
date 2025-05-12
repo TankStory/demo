@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PC.TankStoryAlpha.Web",
   "resources": {
-    "hash": "sha256-FPsRPMyOMWC03ttFqVpChPoN+Puv4m/eIpmyHZxhtvI=",
+    "hash": "sha256-Xg4EeDA5WZfOo/WbzcT2cWA/5G92tfNpWtZQ4qZkMHE=",
     "jsModuleNative": {
       "dotnet.native.8.0.15.92wdfusasx.js": "sha256-vlEv7UQNAQvIJWdzW8EBdItL7VJTb0jW0RmFxyTJGmU="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.15.huuqu3pa0h.js": "sha256-FDzrAx2UjG21VHaNZAes6hQGG2S/oq5S2VaFjEBfPgM="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-PjhjaJGxCOkfAllWeRgRAXZa6bTHlxPE4fzbVQW2+vE="
+      "dotnet.native.wasm": "sha256-LkohMhPeARQIBBZsbPLERjbMiQvwzyKSz9KQIPsg9OY="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -33,11 +33,11 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-Ms2HR5Gpug/0uRAzdk4SUNT76Ml3CjFv9Jo+dUIMGac=",
       "Microsoft.JSInterop.wasm": "sha256-zFg0Y1pJ9elYqhBThL6jLvY00t6ALHU6rfiyc4buWOQ=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-YY3WulCmMB3mBHe00exJXEatbfm9brpV1IIYUlXiYiQ=",
-      "MonoGame.Extended.Graphics.wasm": "sha256-Rq00FzbbBaDpcSCStZ6ZyuAYNk5RA22YgGRkZlemnSA=",
-      "MonoGame.Extended.SceneGraphs.wasm": "sha256-+KtXL4e43YFjMup30Xvlmj8HJgNZiB4e7IlLcwR9jFs=",
-      "MonoGame.Extended.Tiled.wasm": "sha256-iryewQ31qw4aXf5mGhhUZAlollObc8nyI4QmOPJt3I0=",
-      "MonoGame.Extended.Tweening.wasm": "sha256-gWlp7G60bShVtHhVZIg82l5PEFCJzzDSmjUVvw88v80=",
-      "MonoGame.Extended.wasm": "sha256-R7o7kRxPzLfM4u4SCeQm3nXP0bsDgN1WsigdakqqkHs=",
+      "MonoGame.Extended.Graphics.wasm": "sha256-B5CASY+66Jti2bURs54ueCphu/Kcale31nSyza/3uV8=",
+      "MonoGame.Extended.SceneGraphs.wasm": "sha256-0piBmgiYsC3ao9u6bQGNg3iZkajEJI0faETCX84dK5k=",
+      "MonoGame.Extended.Tiled.wasm": "sha256-uEZ/B5XdeIQP3f6xUngMCy9KmPkHnZhJA90k+H7f69g=",
+      "MonoGame.Extended.Tweening.wasm": "sha256-2se1dtA8pooGW83NaXrhx7EaV5pJU4dr99mXcjeDsKg=",
+      "MonoGame.Extended.wasm": "sha256-c6haDWqbCSZ+R2rnbS/mcMSBt0r+QF/Hevxe44wkX8g=",
       "netstandard.wasm": "sha256-88F2TBNBPOrjn2zWBsjZd2ptZyHFmtYpJg3Iunm7fJQ=",
       "Newtonsoft.Json.wasm": "sha256-PaicHOw1U7HF05kEvZI0Rgg1nwdA8hrzbzdkw1qgUuU=",
       "nkast.Wasm.Audio.wasm": "sha256-NIfZon27r+Hc0bYZxn5d35gKELOQKJcF9P+ZrOsFfCo=",
@@ -45,8 +45,8 @@
       "nkast.Wasm.Dom.wasm": "sha256-vafNHlQUaL8TIZ5BHy+iCKyQ1eAIKib4Bubm3B3pKF0=",
       "nkast.Wasm.XHR.wasm": "sha256-9Kd02+F186u9Yc0e0Jg4jNmdgC5p0QDiHkAIqkjqxZ4=",
       "nkast.Wasm.XR.wasm": "sha256-4RMJLlrKcqR6UbYa8GF9EBQXO9nu2W+oHAjL9XHcWNo=",
-      "PC.TankStoryAlpha.wasm": "sha256-KfCjF/VA/AM4jxLnHIv6VS6Hi0IPXGWZEqPly2Mv7kE=",
-      "PC.TankStoryAlpha.Web.wasm": "sha256-J2PZUhKRmxxn24Cklmlm8C1oO0u00a3YYcLJJU0wh/s=",
+      "PC.TankStoryAlpha.wasm": "sha256-eBBkjDC8aD1U0mul/hO/OBkWSgiHkJF9qOgi6mLQ10g=",
+      "PC.TankStoryAlpha.Web.wasm": "sha256-1UJQxfP+ztiJOrf/KJM65Qx2lsi2VFiozWb6zhZnjok=",
       "System.Collections.Concurrent.wasm": "sha256-lvxT0XPwk+iG5LJKCjGCrbng3NW0W/ymJ4Xk9eHouhc=",
       "System.Collections.NonGeneric.wasm": "sha256-t0HqDC6DF9h/kkLJDaqnpdmC6xtMA6y8tL/0Gl+o50c=",
       "System.Collections.Specialized.wasm": "sha256-i5K+h9AdOWqTFmBSOxneWKog6fXzwDjML8HRYPBu1/8=",
@@ -69,7 +69,7 @@
       "System.Net.Http.wasm": "sha256-H6RJ9lrowHGcqPZk2tCkxviDbUaAZg9K/zewBXBEknE=",
       "System.Net.Primitives.wasm": "sha256-+OR8ze62FXMxNPQoQLBi4fJqzlfz4/iaHmTC2G4bvxY=",
       "System.ObjectModel.wasm": "sha256-9eEnFz1szoNQWyUqGWhWc9YAtBEya3DPhgbtQ3uZuTA=",
-      "System.Private.CoreLib.wasm": "sha256-l2fFjSQFTl7kdxTKFzIV69LDtAp092y/VK9ZuiqtuIY=",
+      "System.Private.CoreLib.wasm": "sha256-ONQTHSTHfQM8ULBQ5HtzYbCKCfhisZtceXrpQBCG6kI=",
       "System.Private.Uri.wasm": "sha256-scF64tkQnmqFP90O+srP5FWPAkcdJ7gF4lOzewPG5s4=",
       "System.Private.Xml.Linq.wasm": "sha256-/U253C2wti1xg+/B1OqDg2w/B3bhKHTlH+VtVo7KT+8=",
       "System.Private.Xml.wasm": "sha256-MRXaf/kEciCi5TFrRzNpOCUEWXVCdBw72xFw1oCiwMg=",
