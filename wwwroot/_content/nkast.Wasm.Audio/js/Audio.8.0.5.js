@@ -2,23 +2,18 @@
 {
     Create: function(sr)
     {
-        console.log(`Creating AudioContext with sample rate ${sr}`);
-
         var ac = new AudioContext({ sampleRate: sr });
         var uid = nkJSObject.RegisterObject(ac);
 
         ac.audioWorklet
             .addModule('_content/nkast.Wasm.Audio/js/InteropAudioWorkletProcessor.js')
             .then(
-                () => {
-                    DotNet.invokeMethod('nkast.Wasm.Audio', 'JsAudioContextInitialized', uid);
-                    ac.resume();
-                }                        ,
-                e => console.log(`Failed to initialize interop-audio-worklet-processor. ${e}`));
+                () => DotNet.invokeMethod('nkast.Wasm.Audio', 'JsAudioContextInitialized', uid),
+                e => console.error(`Failed to initialize interop-audio-worklet-processor. ${e}`));
 
         return uid;
     },
-    
+
     Close: function(uid,d)
     {
         var ac = nkJSObject.GetObject(uid);
@@ -94,21 +89,20 @@ window.nkAudioBaseContext =
         var ms = ac.createMediaElementSource(me);
         return nkJSObject.RegisterObject(ms);
     },
-    CreateDynamicSoundEffect: function (uid, cc)
+    CreateDynamicSoundEffect: function (uid, d)
     {
-        //console.log(`Creating DynamicSoundEffectNode with ${cc} channel(s)`);
-
+        var cc = Module.HEAP32[(d + 0) >> 2];
         var ac = nkJSObject.GetObject(uid);
 
         const an = new AudioWorkletNode(ac, "interop-audio-worklet-processor", { outputChannelCount: [cc] });
         const anuid = nkJSObject.RegisterObject(an);
 
         an.port.postMessage({ type: 'uid', uid: anuid });
-        an.port.onmessage = (event) => {
-            //console.time('post-buffer-consumed');
-            DotNet.invokeMethod('nkast.Wasm.Audio', 'JsDynamicSoundEffectQueuedBufferConsumed', event.data.uid);
-            //console.timeEnd('post-buffer-consumed');
-        };
+        an.port.onmessage = e => DotNet.invokeMethod('nkast.Wasm.Audio', 'JsDynamicSoundEffectQueuedBufferConsumed', e.data.uid);
+
+        if (ac.state !== "running") {
+            ac.resume();
+        }
 
         return anuid;
     }
@@ -333,26 +327,20 @@ window.nkDynamicSoundEffectNode =
     SubmitBuffer: function (uid, d) {
         const an = nkJSObject.GetObject(uid);
 
-        //console.time('submit-buffer-marshalling');
         const arr = Module.HEAP32[d >> 2];
 
         const arrPtr = Blazor.platform.getArrayEntryPtr(arr, 0, 4);
         const arrLen = Blazor.platform.getArrayLength(arr);
         const localCopy = new Float32Array(Module.HEAPU8.buffer, arrPtr, arrLen).slice();
-        //console.timeEnd('submit-buffer-marshalling');
 
-        //console.time('submit-buffer-posting');
         an.port.postMessage({ type: 's', buffer: localCopy.buffer }, [localCopy.buffer]);
-        //console.timeEnd('submit-buffer-posting');
     },
     ClearBuffers: function (uid) {
         var an = nkJSObject.GetObject(uid);
-        console.log(`Clearing buffers for ${uid}`)
         an.port.postMessage({ type: 'c' });
     },
     Stop: function (uid) {
         var an = nkJSObject.GetObject(uid);
-        console.log(`Stopping ${uid}`)
         an.port.postMessage({ type: 'q' });
     }
 };
