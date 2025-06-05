@@ -6,7 +6,7 @@
         var uid = nkJSObject.RegisterObject(ac);
 
         ac.audioWorklet
-            .addModule('_content/nkast.Wasm.Audio/js/InteropAudioWorkletProcessor.js')
+            .addModule('_content/nkast.Wasm.Audio/js/StreamingAudioWorkletProcessor.js')
             .then(
                 () => DotNet.invokeMethod('nkast.Wasm.Audio', 'JsAudioContextInitialized', uid),
                 e => console.error(`Failed to initialize interop-audio-worklet-processor. ${e}`));
@@ -89,16 +89,16 @@ window.nkAudioBaseContext =
         var ms = ac.createMediaElementSource(me);
         return nkJSObject.RegisterObject(ms);
     },
-    CreateDynamicSoundEffect: function (uid, d)
+    CreateStreamingAudioWorkletNode: function (uid, d)
     {
         var cc = Module.HEAP32[(d + 0) >> 2];
         var ac = nkJSObject.GetObject(uid);
 
-        const an = new AudioWorkletNode(ac, "interop-audio-worklet-processor", { outputChannelCount: [cc] });
+        const an = new AudioWorkletNode(ac, "streaming-audio-worklet", { outputChannelCount: [cc] });
         const anuid = nkJSObject.RegisterObject(an);
 
         an.port.postMessage({ type: 'uid', uid: anuid });
-        an.port.onmessage = e => DotNet.invokeMethod('nkast.Wasm.Audio', 'JsDynamicSoundEffectQueuedBufferConsumed', e.data.uid);
+        an.port.onmessage = e => DotNet.invokeMethod('nkast.Wasm.Audio', 'JsStreamingAudioWorkletNodeBufferConsumed', e.data.uid, e.data.remaining);
 
         if (ac.state !== "running") {
             ac.resume();
