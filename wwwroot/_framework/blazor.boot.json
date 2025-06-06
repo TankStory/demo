@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DynamicAudioTest.Web",
   "resources": {
-    "hash": "sha256-Rt8eSbJkZu15XCrDUTnL9WrgTVwtnpUkU6kyo2EPBgQ=",
+    "hash": "sha256-DxMGlubrNT8NkK2EVQ+kXpeiKtjk5bfgmD4kBsAuBgw=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-Rf5lbkiqVyhYQ4gvvaAbrJ0sz7VpzXJE9XeO8mSi6XY="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.js": "sha256-t76BRXwt7ie+t1popBz8/uUmIQCWeGU9XALjF0psLNw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-9N7jeHmrBFG8PUbavKBy6mCTlISho24K2J6nVb0dO+4="
+      "dotnet.native.wasm": "sha256-W0XWh/Wl39/Uy4vpxIn3KQY34bLFeCjs1r8AWUh+54s="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -18,9 +18,9 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "DynamicAudioTest.Common.Web.wasm": "sha256-J+bIxy6X8ajDBU/9oyA0cSk1M+3HSn+/BHOpyxIEhNk=",
-      "DynamicAudioTest.Web.wasm": "sha256-suE07npoAe2h8h/dLrrqRAyICv5UqjS3YefO7DWEW9E=",
-      "Kni.Platform.wasm": "sha256-J2uRIt0Um/u3HEwCz7jpp15QxUuBut/i7T/g+oSAWkg=",
+      "DynamicAudioTest.Common.Web.wasm": "sha256-39x+srtJ+0UQ1LSyni/2V9vweA9bl+Bx0os0OYmBV60=",
+      "DynamicAudioTest.Web.wasm": "sha256-3jOyihnypZKpAaIVG5YXBv/Qa/brdH1K0vMi36bdhR8=",
+      "Kni.Platform.wasm": "sha256-rVIo8oMQXE1+t+wuDSxDtIsYwEmn0FajYNGlaO7H1UI=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-GQ0L375RNDee6g+3ZapFcB8PRSyvoGm3SIACFuxOLbg=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-yllz2uzErKX9gM4yVOEJZwHOrfq7m3onCrijPUlvX4U=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-QQOcBDu5Rl/lLCWkwHn7BGdAtS9Eg1Qbafc/mUV3kKU=",
@@ -59,16 +59,16 @@
       "System.Text.Json.wasm": "sha256-ffF3JkScen94Mjkkq7uoqBbXt1XnWMMWOo4X/DL7BY8=",
       "System.Text.RegularExpressions.wasm": "sha256-wXIy5iC+/VjtOA5cW4kNiAILlAdc6bgbzSn0bmF6VaI=",
       "System.Threading.wasm": "sha256-uEADCjlSlo/6vVBIX8IqabSf+UEtazcpcP5TNzWVyVw=",
-      "Xna.Framework.Audio.wasm": "sha256-/h1rNhqSUZY5YD21rt6K/VDE5sPAAbrlrQLw9cFkX4w=",
-      "Xna.Framework.Content.wasm": "sha256-KZ4URk258UAVBiVAtoNeJpJHGMlJJhDCl02onWvnfug=",
-      "Xna.Framework.Devices.wasm": "sha256-Yo/A6+fhuVdK5HlkazS2Y3SSbbD0pvaShED8pV09Dz0=",
-      "Xna.Framework.Game.wasm": "sha256-9wOmi3GT+BqDpwkdEjJjBAVclRxhjgzV1BgZdS7CoRQ=",
-      "Xna.Framework.Graphics.wasm": "sha256-AiFvekUbZH8Od5F0vKhUjOPvcqxkfn1ht/N9SvekBcs=",
-      "Xna.Framework.Input.wasm": "sha256-a9J22DmDXQKP/WY+i++RTiWVv+kP3apdxcenVAUBLJw=",
-      "Xna.Framework.Media.wasm": "sha256-ZQblO+gk+jrNH9MjSnIVUrGmBLmbqfTVoPhH5OUOruw=",
-      "Xna.Framework.Storage.wasm": "sha256-5ZmViB9+HnvIwPX5wpgTN5IixDqjq9C6XYy/62PYOiE=",
-      "Xna.Framework.wasm": "sha256-DIcFiqWHdFfq5CIE82gOuj+Fj41pIZi4SrnX/n5cvGo=",
-      "Xna.Framework.XR.wasm": "sha256-L/zv0PNQaMOpwo2iTUFAq148KvxBVaERapzhfp8xxEE="
+      "Xna.Framework.Audio.wasm": "sha256-/5tiQlwOOInaMLdLOJyycMDBsqYJpar0tMJhiLSsPCA=",
+      "Xna.Framework.Content.wasm": "sha256-h/1pemf/4BMbgEF+ttFk0qUkF8L87a1owibElIJbri4=",
+      "Xna.Framework.Devices.wasm": "sha256-V/uimRQQcSO0BG7zrLAcW2DgJXxB8akgr02tqCdAikA=",
+      "Xna.Framework.Game.wasm": "sha256-XzBeJoCYTakawA70158a9r7N1QrePc5pfFl65+JEpac=",
+      "Xna.Framework.Graphics.wasm": "sha256-TXU2tO3OOfvIR8hi6OUdzDoRgBQbgolq4+gjmPBoxvc=",
+      "Xna.Framework.Input.wasm": "sha256-5pxTdzI6VAXXSkqe2HWA7AhKNj+rqFKhSSs01eHPAws=",
+      "Xna.Framework.Media.wasm": "sha256-pwBTvJwK7LZv3lvvopYjb1iysAsJChVuWlMV8vh7VJI=",
+      "Xna.Framework.Storage.wasm": "sha256-NoH0YF4V3zBSj3IwJtav3jmlEr3HKx79Pj48ogKw3N0=",
+      "Xna.Framework.wasm": "sha256-Yo4+hJJVynO17Ym4Lk7MS63ku3A8qo/kf2W+c8NXxCA=",
+      "Xna.Framework.XR.wasm": "sha256-DTsjZpZ565rXkzHLNJr4o30Hp91GbKbfqAYUL8ch58s="
     }
   },
   "cacheBootResources": true,
