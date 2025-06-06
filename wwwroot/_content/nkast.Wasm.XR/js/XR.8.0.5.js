@@ -62,7 +62,7 @@ window.nkXRSystem =
         var features = [];
 
         var ls = (fs >>  0) & 1;
-        var fs = (fs >>  1) & 1;
+        var lf = (fs >>  1) & 1;
         var ub = (fs >>  2) & 1;
         var bf = (fs >>  3) & 1;
         var vr = (fs >>  4) & 1;
@@ -78,7 +78,7 @@ window.nkXRSystem =
 
         if (ls == 1)
             features.push('local');
-        if (fs == 1)
+        if (lf == 1)
             features.push('local-floor');
         if (ub == 1)
             features.push('unbounded');
@@ -391,6 +391,19 @@ window.nkXRFrame =
 
         return nkJSObject.RegisterObject(ps);
     },
+    GetJointPose: function (uid, d)
+    {
+        var fr = nkJSObject.GetObject(uid);
+        var spid = Module.HEAP32[(d + 0) >> 2];
+        var bsid = Module.HEAP32[(d + 4) >> 2];
+
+        var sp = nkJSObject.GetObject(spid);
+        var bs = nkJSObject.GetObject(bsid);
+
+        var ps = fr.getJointPose(sp, bs);
+
+        return nkJSObject.RegisterObject(ps);
+    },
 };
 
 window.nkXRPose =
@@ -456,6 +469,15 @@ window.nkXRPose =
         Module.HEAPF32[(pt+20)>>2] = ps.y;
         Module.HEAPF32[(pt+24)>>2] = ps.z;
         Module.HEAPF32[(pt+28)>>2] = ps.w;
+    },
+};
+
+window.XRJointPose =
+{
+    GetRadius: function (uid, d)
+    {
+        var ps = nkJSObject.GetObject(uid);
+        return ps.radius;
     },
 };
 
@@ -598,4 +620,41 @@ window.nkXRInputSource =
         return nkJSObject.RegisterObject(gp);
     },
 
+    GetHand: function (uid, d)
+    {
+        var is = nkJSObject.GetObject(uid);
+
+        var hd = is.hand;        
+        if (hd == undefined) return -1; // // immersive-web-emulator returns undefined instead of null. https://immersive-web.github.io/webxr-hand-input/#xrinputsource-interface
+
+        var uid = nkJSObject.GetUid(hd);
+        if (uid !== -1)
+            return uid;
+
+        return nkJSObject.RegisterObject(hd);
+    },
 };
+
+
+window.nkXRHand =
+{
+    GetSize: function (uid, d)
+    {
+        var hd = nkJSObject.GetObject(uid);
+        return hd.size;
+    },
+    Get: function (uid, d)
+    {
+        var hd = nkJSObject.GetObject(uid);
+        var ky = nkJSObject.ReadString(d + 0);
+
+        var js = hd.get(ky);
+
+        var uid = nkJSObject.GetUid(js);
+        if (uid !== -1)
+            return uid;
+
+        return nkJSObject.RegisterObject(js);
+    },
+};
+

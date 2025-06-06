@@ -70,6 +70,89 @@
         var str = BINDING.conv_string(pt);
         return str;
     },
+
+    funcMap: [null],
+    utf16Decoder: new TextDecoder("utf-16le"),
+    ToJSString: function (pidentifier, length)
+    {   
+        const memory = new Uint16Array(Module.HEAPU16.buffer, pidentifier, length);
+        return nkJSObject.utf16Decoder.decode(memory);
+    },
+    JSRegisterFunction: function (pidentifier, length)
+    {
+        const identifier = nkJSObject.ToJSString(pidentifier, length);
+
+        const parts = identifier.split('.');
+
+        let target = globalThis;
+        for (let i = 0; i < parts.length - 1; i++)
+        {
+            target = target[parts[i]];
+        }
+
+        const functionName = parts[parts.length - 1];
+
+        const func = target[functionName].bind(target);
+        nkJSObject.funcMap.push(func);
+        var fid = nkJSObject.funcMap.lastIndexOf(func);
+
+        return fid;
+    },
+    JSInvoke0Int: function(fid)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func();
+    },
+    JSInvoke1Void: function(fid, uid)
+    {
+        let func = nkJSObject.funcMap[fid];
+        func(uid);
+    },
+    JSInvoke1Bool: function(fid, uid)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid);
+    },
+    JSInvoke1Int: function(fid, uid)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid);
+    },
+    JSInvoke1Float: function(fid, uid)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid);
+    },
+    JSInvoke1String: function(fid, uid)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid);
+    },
+    JSInvoke2Void: function(fid, uid, d)
+    {
+        let func = nkJSObject.funcMap[fid];
+        func(uid, d);
+    },
+    JSInvoke2Bool: function(fid, uid, d)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid, d);
+    },
+    JSInvoke2Int: function(fid, uid, d)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid, d);
+    },
+    JSInvoke2Float: function(fid, uid, d)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid, d);
+    },
+    JSInvoke2String: function(fid, uid, d)
+    {
+        let func = nkJSObject.funcMap[fid];
+        return func(uid, d);
+    },
 }
 
 window.nkJSArray =
@@ -149,23 +232,19 @@ window.nkPromise =
 
         if (pr.Error instanceof DOMException)
         {
-            var mg = pr.Error.message;
-            return BINDING.js_to_mono_obj(mg);
+            return pr.Error.message;
         }
         else if (pr.Error instanceof Error)
         {
-            var mg = pr.Error.message;
-            return BINDING.js_to_mono_obj(mg);
+            return pr.Error.message;
         }
         else if (typeof pr.Error === "string")
         {
-            var mg = pr.Error;
-            return BINDING.js_to_mono_obj(mg);
+            return pr.Error;
         }
         else
         {
-            var mg = "Unknown Error";
-            return BINDING.js_to_mono_obj(mg);
+            return "Unknown Error";
         }
     },
 

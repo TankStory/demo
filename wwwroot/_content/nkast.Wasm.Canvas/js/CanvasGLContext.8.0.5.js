@@ -181,8 +181,7 @@ window.nkCanvasGLContext =
     {
         var gc = nkJSObject.GetObject(uid);
         var pn = Module.HEAP32[(d+ 0)>>2];
-        var str = gc.getParameter(pn);
-        return BINDING.js_to_mono_obj(str);
+        return gc.getParameter(pn);
     },
 
     CreateTexture: function (uid, d)
@@ -847,8 +846,7 @@ window.nkCanvasGLContext =
         var gc = nkJSObject.GetObject(uid);
         var pguid = Module.HEAP32[(d+ 0)>>2];
         var pg = nkJSObject.GetObject(pguid);
-        var nf = gc.getProgramInfoLog(pg);
-        return BINDING.js_to_mono_obj(nf);
+        return gc.getProgramInfoLog(pg);
     },
 
     GetShaderInfoLog: function (uid, d)
@@ -856,8 +854,7 @@ window.nkCanvasGLContext =
         var gc = nkJSObject.GetObject(uid);
         var shuid = Module.HEAP32[(d+ 0)>>2];
         var sh = nkJSObject.GetObject(shuid);
-        var nf = gc.getShaderInfoLog(sh);
-        return BINDING.js_to_mono_obj(nf);
+        return gc.getShaderInfoLog(sh);
     },
 
     LinkProgram: function (uid, d)
@@ -1166,6 +1163,21 @@ window.nkCanvasGL2Context =
         var w  = Module.HEAP32[(d+12)>>2];
         var h  = Module.HEAP32[(d+16)>>2];
         gc.renderbufferStorageMultisample(bt, sm, fm, w, h);
+    },
+    VertexAttribDivisor: function (uid, d) {
+        var gc = nkJSObject.GetObject(uid);
+        var ix = Module.HEAP32[(d + 0) >> 2];
+        var di = Module.HEAP32[(d + 4) >> 2];
+        gc.vertexAttribDivisor(ix, di);
+    },
+    DrawElementsInstanced: function (uid, d) {
+        var gc = nkJSObject.GetObject(uid);
+        var md = Module.HEAP32[(d + 0) >> 2];
+        var ct = Module.HEAP32[(d + 4) >> 2];
+        var tp = Module.HEAP32[(d + 8) >> 2];
+        var of = Module.HEAP32[(d + 12) >> 2];
+        var ic = Module.HEAP32[(d + 16) >> 2];
+        gc.drawElementsInstanced(md, ct, tp, of, ic);
     },
 };
 
