@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DynamicAudioTest.Web",
   "resources": {
-    "hash": "sha256-DxMGlubrNT8NkK2EVQ+kXpeiKtjk5bfgmD4kBsAuBgw=",
+    "hash": "sha256-XbW2gtmejoEjGtawn1Z1GhS4ffNqH983tKXZ+RbomJo=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-Rf5lbkiqVyhYQ4gvvaAbrJ0sz7VpzXJE9XeO8mSi6XY="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.js": "sha256-t76BRXwt7ie+t1popBz8/uUmIQCWeGU9XALjF0psLNw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-W0XWh/Wl39/Uy4vpxIn3KQY34bLFeCjs1r8AWUh+54s="
+      "dotnet.native.wasm": "sha256-ZTd5eQrH4xGmb+F8BlgTIaZQ6VyzrfRaD5T2AoK2c/w="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -18,9 +18,9 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "DynamicAudioTest.Common.Web.wasm": "sha256-39x+srtJ+0UQ1LSyni/2V9vweA9bl+Bx0os0OYmBV60=",
-      "DynamicAudioTest.Web.wasm": "sha256-3jOyihnypZKpAaIVG5YXBv/Qa/brdH1K0vMi36bdhR8=",
-      "Kni.Platform.wasm": "sha256-rVIo8oMQXE1+t+wuDSxDtIsYwEmn0FajYNGlaO7H1UI=",
+      "DynamicAudioTest.Common.Web.wasm": "sha256-O+vksUFjkHqz+y/KI+NgXZBe1nQOod0TIJPHkIou83c=",
+      "DynamicAudioTest.Web.wasm": "sha256-ER3aeaOreai7XfVmZiOIpO17o+ZJ2NxMyGeFwlICjGs=",
+      "Kni.Platform.wasm": "sha256-TfCcyI5qAP/UeWzWdIbRfeq/LkVzJjlyorQDFqurb4c=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-GQ0L375RNDee6g+3ZapFcB8PRSyvoGm3SIACFuxOLbg=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-yllz2uzErKX9gM4yVOEJZwHOrfq7m3onCrijPUlvX4U=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-QQOcBDu5Rl/lLCWkwHn7BGdAtS9Eg1Qbafc/mUV3kKU=",
